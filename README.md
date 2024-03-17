@@ -45,8 +45,51 @@ IMGUR_CLIENT_ID=<Your CLIENT_ID> docker-compose up
 IMGUR_CLIENT_ID=<Your CLIENT_ID> docker-compose up -d
 ```
 
-## API
-Postman Collection
+## APIs
+
+### Create a post
+HTTP Method: `POST`
+Endpoint: `/posts`
+HTTP Request Body(JSON)
+```JSON
+{
+    "coverUrl": "https://i.imgur.com/n744BL9.png"
+}
+```
+HTTP Response Body(JSON)
+```JSON
+{
+    "data": {
+        "id": 1,
+        "coverUrl": "https://i.imgur.com/n744BL9.png",
+        "status": "IDLE"
+    },
+    "message": "Successful Request"
+}
+```
+
+### Get all posts
+HTTP Method: `GET`
+Endpoint: `/posts`
+HTTP Request Body(JSON)
+```JSON
+{}
+```
+HTTP Response Body(JSON)
+```JSON
+{
+    "data": [
+        {
+            "id": 1,
+            "coverUrl": "https://i.imgur.com/n744BL9.png",
+            "status": "IDLE"
+        }
+    ],
+    "message": "Successful Request"
+}
+```
+
+### Postman Collection
 ```JSON
 {
 	"info": {
