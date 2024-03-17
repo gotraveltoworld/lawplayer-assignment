@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    labels:
+      name: "backend-docker.local"
+    environment:
+      NODE_ENV: "dev"
+      IMGUR_CLIENT_ID: ${IMGUR_CLIENT_ID}
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
